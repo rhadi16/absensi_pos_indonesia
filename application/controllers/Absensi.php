@@ -8,9 +8,6 @@ class Absensi extends CI_Controller
         parent::__construct();
         $this->load->model('Absensi_model');
         $this->load->library('form_validation');
-
-        is_logged_in();
-        cek_admin();
     }
 
     public function index()
@@ -19,9 +16,9 @@ class Absensi extends CI_Controller
 
         $data['judul'] = "Absensi";
 
-        $this->load->view('templates/admin_header', $data);
+        $this->load->view('templates/scanner_header', $data);
         $this->load->view('absensi/index');
-        $this->load->view('templates/admin_footer');
+        $this->load->view('templates/scanner_footer');
     }
 
     public function rekap()

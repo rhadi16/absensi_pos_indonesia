@@ -27,8 +27,8 @@
                     </form>
                     <div class="text-center">
                         <a href="#" class="text-decoration-none lh-lg"><b>Lupa Password?</b></a>
-                        <!-- <br>
-                        <a href="#" class="text-decoration-none lh-lg">Buat Akun Baru!</a> -->
+                        <br>
+                        <a href="<?= base_url('absensi') ?>" target="_blank" class="text-decoration-none lh-lg"><b>Absensi</b></a>
                     </div>
                 </div>
             </div>

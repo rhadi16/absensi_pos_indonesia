@@ -57,7 +57,7 @@
                     </a>
                     <a href="<?= base_url('absensi') ?>" class="nav_link <?php if ($judul == "Absensi") {
                                                                                 echo "active";
-                                                                            } ?>">
+                                                                            } ?>" target="_blank">
                         <i class="fa-solid fa-qrcode nav_icon me-3"></i>
                         <span class="nav_name">Absensi</span>
                     </a>

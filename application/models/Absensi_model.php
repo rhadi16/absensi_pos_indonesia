@@ -32,13 +32,13 @@ class Absensi_model extends CI_model
 
         if ($absen) {
             $this->session->set_flashdata('flash', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Anda telah melakukan absen pada tanggal sekarang <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-            redirect('admin');
+            redirect('absensi');
         } else {
             $jarak = intval($this->_getDistanceBetweenPoints($dt_kr[2], $dt_kr[3], $loc_off['lat'], $loc_off['lon']));
 
             if ($jarak > $loc_off['jarak']) {
                 $this->session->set_flashdata('flash', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Gagal Melakukan Absensi! Anda Jauh Dari Kantor Silahkan Generate Ulang Qrcode.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-                redirect('admin');
+                redirect('absensi');
             } else {
                 $data = array(
                     'nip' => $dt_kr[0],
@@ -50,7 +50,7 @@ class Absensi_model extends CI_model
                 $this->db->insert('tb_absensi', $data);
 
                 $this->session->set_flashdata('flash', '<div class="alert alert-success alert-dismissible fade show" role="alert">Berhasil Melakukan Absensi. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-                redirect('admin');
+                redirect('absensi');
             }
         }
     }

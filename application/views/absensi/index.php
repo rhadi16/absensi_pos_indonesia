@@ -1,49 +1,53 @@
-<main class="app__layout-content position-relative w-100" style="height: 90vh;">
-    <video autoplay class="w-100 h-100"></video>
+<div class="position-absolute mt-4 ms-4" style="z-index: 4;">
+    <?= $this->session->flashdata('flash'); ?>
+</div>
+<div class="app__layout">
+    <main class="app__layout-content">
+        <video autoplay></video>
 
-    <!-- Dialog for result  -->
-    <div class="app__dialog app__dialog--hide">
-        <div class="app__dialog-content">
-            <form action="<?= base_url('absensi/absen'); ?>" method="post">
-                <div>
-                    <h1>QR Code</h1>
-                    <input type="text" id="result" name="result" readonly>
-                    <input type="hidden" id="lat" name="lat">
-                    <input type="hidden" id="lon" name="lon">
-                    <input type="text" id="time" name="time" value="<?= date("Y-m-d H:i:s"); ?>" readonly>
-                </div>
-                <div class="row mt-3">
-                    <button type="submit" class="btn app__dialog-open d-block w-25">Ok</button>
-                    <a href="<?= base_url('absensi'); ?>" class="btn app__dialog-close d-block w-50 pt-1">Scan Ulang</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="app__dialog-overlay app__dialog--hide"></div>
-
-    <!-- Info Dialog  -->
-    <div class="app__infodialog app__infodialog--hide">
-        <div class="app__infodialog-content">
-            <h1>About</h1>
-            <p>QR Code Scanner is the fastest and most user-friendly progressive web application.</p>
-            <div class="app__infodialog-subcontent">
-                <p><strong>Author:</strong> <a href="https://github.com/gokulkrishh" rel="noreferrer noopener">Gokulakrishnan Kalaikovan</a></p>
-                <p><strong>Source:</strong> <a href="https://github.com/gokulkrishh/qrcodescan.in" rel="noreferrer noopener">Github</a></p>
-                <p><strong>Donate:</strong> <a href="https://www.paypal.me/gokulkrishh" rel="noreferrer noopener">PayPal</a></p>
+        <!-- Dialog for result  -->
+        <div class="app__dialog app__dialog--hide">
+            <div class="app__dialog-content">
+                <form action="<?= base_url('absensi/absen'); ?>" method="post">
+                    <div>
+                        <h1>QR Code</h1>
+                        <input type="text" id="result" name="result" readonly>
+                        <input type="hidden" id="lat" name="lat">
+                        <input type="hidden" id="lon" name="lon">
+                        <input type="text" id="time" name="time" value="<?= date("Y-m-d H:i:s"); ?>" readonly>
+                    </div>
+                    <div class="row mt-3">
+                        <button type="submit" class="btn app__dialog-open d-block w-25">Ok</button>
+                        <a href="<?= base_url('absensi'); ?>" class="btn app__dialog-close d-block w-50 pt-1">Scan Ulang</a>
+                    </div>
+                </form>
             </div>
-            <span class="app__version">v1.0.2</span>
         </div>
-        <div class="app__infodialog-actions">
-            <button type="button" class="app__infodialog-close">Close</button>
+
+        <div class="app__dialog-overlay app__dialog--hide"></div>
+
+        <!-- Info Dialog  -->
+        <div class="app__infodialog app__infodialog--hide">
+            <div class="app__infodialog-content">
+                <h1>About</h1>
+                <p>QR Code Scanner is the fastest and most user-friendly progressive web application.</p>
+                <div class="app__infodialog-subcontent">
+                    <p><strong>Author:</strong> <a href="https://github.com/gokulkrishh" rel="noreferrer noopener">Gokulakrishnan Kalaikovan</a></p>
+                    <p><strong>Source:</strong> <a href="https://github.com/gokulkrishh/qrcodescan.in" rel="noreferrer noopener">Github</a></p>
+                    <p><strong>Donate:</strong> <a href="https://www.paypal.me/gokulkrishh" rel="noreferrer noopener">PayPal</a></p>
+                </div>
+                <span class="app__version">v1.0.2</span>
+            </div>
+            <div class="app__infodialog-actions">
+                <button type="button" class="app__infodialog-close">Close</button>
+            </div>
         </div>
-    </div>
 
-    <div class="app__infodialog-overlay app__infodialog--hide"></div>
+        <div class="app__infodialog-overlay app__infodialog--hide"></div>
 
-    <!-- Snackbar -->
-    <div class="app__snackbar"></div>
-</main>
+        <!-- Snackbar -->
+        <div class="app__snackbar"></div>
+    </main>
 </div>
 <div class="app__overlay">
     <div class="app__overlay-frame"></div>
