@@ -16,8 +16,8 @@
 
 
 -- Dumping database structure for khaerul
-CREATE DATABASE IF NOT EXISTS `khaerul` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `khaerul`;
+-- CREATE DATABASE IF NOT EXISTS `khaerul` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+-- USE `khaerul`;
 
 -- Dumping structure for table khaerul.accounts
 CREATE TABLE IF NOT EXISTS `accounts` (

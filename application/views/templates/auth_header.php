@@ -14,4 +14,4 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/auth_style.css'); ?>">
 </head>
 
-<body class="bg-primary">
+<body>

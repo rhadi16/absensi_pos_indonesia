@@ -17,7 +17,7 @@
                     <?php for ($i = 1; $i < $jum_tanggal + 1; $i++) { ?>
                         <?php $rekap = $this->Absensi_model->jum_absen($p['nip'], $i); ?>
                         <?php if ($rekap) {
-                            echo '<td class="text-bg-success text-center"> <i class="fa-solid fa-check"></i> </td>';
+                            echo '<td class="text-bg-success text-center"> <i class="fa-solid fa-check"></i><br>' . date('H:i', strtotime($rekap[0]['time'])) . ' </td>';
                         } else {
                             echo '<td class="text-bg-danger text-center"> <i class="fa-solid fa-xmark"></i> </td>';
                         }

@@ -1,9 +1,9 @@
 <div class="container">
     <div class="card mb-3 col-md-9 col-sm-12 col-lg-8 mx-auto shadow mt-5">
-        <div class="row g-0">
-            <div class="col-md-4 parent-login">
-                <!-- <img src="<?= base_url('assets/img-login/bg.jpg'); ?>" class="img-fluid rounded-start" alt="..."> -->
-                <div class="rounded w-100 h-100 img-login" style="background-image: url('<?= base_url('assets/img-login/bg.jpg'); ?>');"></div>
+        <div class="row g-0 align-items-center">
+            <div class="col-md-4 parent-login p-3">
+                <img src="<?= base_url('assets/img-login/Pos-Indonesia.png'); ?>" class="img-fluid rounded-start" alt="...">
+                <!-- <div class="rounded w-100 h-100 img-login" style="background-image: url('<?= base_url('assets/img-login/Pos-Indonesia.png'); ?>');"></div> -->
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -26,9 +26,7 @@
                         <hr>
                     </form>
                     <div class="text-center">
-                        <a href="#" class="text-decoration-none lh-lg"><b>Lupa Password?</b></a>
-                        <br>
-                        <a href="<?= base_url('absensi') ?>" target="_blank" class="text-decoration-none lh-lg"><b>Absensi</b></a>
+                        <a href="<?= base_url('absensi') ?>" target="_blank" class="btn btn-warning w-100 rounded-5 lh-lg text-white">Absensi</a>
                     </div>
                 </div>
             </div>
