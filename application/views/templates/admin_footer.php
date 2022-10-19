@@ -8,11 +8,6 @@
 <script src="<?= base_url('assets/bootstrap5/js/bootstrap.min.js'); ?>"></script>
 <!-- Fontawesome -->
 <script src="<?= base_url('assets/fontawesome/js/all.min.js'); ?>"></script>
-<!-- Scanner -->
-<script src="decoder.js"></script>
-<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
-</script>
-<script src="bundle.js"></script>
 <!-- Location -->
 <script src="<?= base_url('assets/js/geo-min.js'); ?>" type="text/javascript" charset="utf-8"></script>
 <!-- Datatable -->

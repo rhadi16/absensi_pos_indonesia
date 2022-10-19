@@ -6,11 +6,21 @@ class Absensi_model extends CI_model
     public function rekapAbsen()
     {
         $q = $this->db->query("SELECT DISTINCT
-                                a.nip,
-                                b.nama
+                                    a.nip,
+                                    a.nama
+                                FROM accounts a
+                                LEFT JOIN tb_absensi b ON b.nip = a.nip
+                                WHERE a.nip != 1234
+                                ORDER BY a.nip");
+
+        return $q->result_array();
+    }
+    public function detail_jum_absen($date, $bulan, $tahun, $nip)
+    {
+        $q = $this->db->query("SELECT 
+                                *
                             FROM tb_absensi a
-                            LEFT JOIN accounts b ON a.nip = b.nip
-                            ORDER BY a.nip");
+                            WHERE DAY(a.time) = $date AND MONTH(a.time) = $bulan AND YEAR(a.time) = $tahun AND a.nip = $nip");
 
         return $q->result_array();
     }
@@ -53,6 +63,25 @@ class Absensi_model extends CI_model
                 redirect('absensi');
             }
         }
+    }
+    public function inputAbsenAdmin()
+    {
+        $data = array(
+            'nip' => $this->input->post('nip', true),
+            'lat' => 0,
+            'lon' => 0,
+            'time' => $this->input->post('time', true)
+        );
+
+        $this->db->insert('tb_absensi', $data);
+
+        $this->session->set_flashdata('flash', '<div class="alert alert-success alert-dismissible fade show" role="alert">Berhasil Menambahkan Absensi. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+        redirect('absensi/rekap');
+    }
+    public function hapusAbsenAdmin($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tb_absensi');
     }
     private function _getDistanceBetweenPoints($lat1, $lon1, $lat2, $lon2)
     {
